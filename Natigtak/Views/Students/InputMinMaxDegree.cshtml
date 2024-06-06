@@ -1,0 +1,29 @@
+﻿@model MinMaxDegree
+@{
+	ViewData["Title"] = "Min,Max Degree";
+}
+<div class="text-center b mt-lg-3">
+	<form asp-action="GetNumberOfStudentWithRange">
+		<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+		<h3>برجاء ادخال الحد الأدني والأقصي للدرجه </h3>
+		<div class="form-group">
+			<input asp-for="Min" class="form-control mt-2 w-25 d-inline text-center" placeholder="الحد الأدني" />
+			<span asp-validation-for="Min" class="text-danger d-block mt-2"></span>
+		</div>
+
+		<div></div>
+		<div class="form-group">
+		<input asp-for="Max" class="form-control mt-2 w-25 d-inline text-center" placeholder="الحدالأقصي" />
+		<span asp-validation-for="Max" class="text-danger d-block mt-2"></span>
+
+		</div>
+		<div class="form-group mt-4 ">
+			<input type="submit" value="عدد الطلاب" class="btn w-25 btn-primary" />
+		</div>
+	</form>
+</div>
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

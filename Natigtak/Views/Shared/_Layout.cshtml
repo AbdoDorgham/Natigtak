@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Natigtak - @ViewData["Title"]</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/Natigtak.styles.css" asp-append-version="true" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<header>
+
+
+		<nav class="navbar navbar-expand-sm  navbar-toggleable-sm navbar-light bg-light border-bottom box-shadow mb-3">
+			<div class="container-fluid">
+				<a class="navbar-brand " asp-controller="Students" asp-action="Index">نتيجتك</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+					<ul class="navbar-nav flex-grow-1">
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Students" asp-action="Index">الرئيسية</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Students" asp-action="TopTenStudents">أوائل الثانوية العامة</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Students" asp-action="InputMinMaxDegree">عدد الطلاب في مدي درجات معين </a>
+						</li>
+						<div class="dropdown">
+							<button class="dropbtn">
+								<a asp-action="GetNumberOfSuccessfulStudents" class="text-decoration-none text-black">
+									عدد الطلاب الناجحين
+									<i class="fa fa-caret-down"></i>
+								</a>
+							</button>
+							<div class="dropdown-content">
+								<a asp-action="GetNumberOfSecondRoundStudents">عدد طلاب الدور الثان</a>
+								<a asp-action="GetNumberOfFailedStudents">عدد الطلاب الراسبين</a>
+							</div>
+						</div>
+					</ul>
+
+				</div>
+
+			</div>
+		</nav>
+	</header>
+	<div class="container">
+		<main role="main" class="pb-3">
+			@RenderBody()
+		</main>
+	</div>
+
+	<footer class=" bg-light footer text-muted">
+		<div class="container d-flex justify-content-between">
+			<span class="text-dark ">
+				<strong>نتيجتك -  2023 &copy;</strong>
+			</span>
+		<div>
+				<a href="https://www.linkedin.com/in/abdo-dorgham-a2a360217/" class="fa fa1 fa-linkedin" ></a>
+				<a href="https://myaccount.google.com/?utm_source=chrome-profile-chooser" class="fa fa1 fa-google"></a>
+				<a href="https://www.facebook.com/abdo.dorgham.71/" class="fa fa1 fa-facebook"></a>
+
+
+
+		</div>
+		</div>
+	</footer>
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+	@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

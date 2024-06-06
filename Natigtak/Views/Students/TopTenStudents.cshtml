@@ -1,0 +1,12 @@
+﻿@model IEnumerable<StageNewSearch> 
+@{
+	ViewData["Title"] = "Top Ten Students";
+}
+@foreach (var student in Model)
+{
+	<partial name="_StudentTable" model="student" />
+}
+<div class="text-center b mt-lg-2 ">
+
+	<a asp-action="Index" class="btn btn-primary mt-3 align-content-start justify-content-start">العوده الي الرئيسيه</a>
+</div>

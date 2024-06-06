@@ -1,0 +1,14 @@
+﻿@model MinMaxDegree 
+@{
+	ViewData["Title"] = "Students In Degree Range";
+}
+<div  class="text-center b mt-lg-4 ">
+
+<h3 class="text-center ">عدد الطلاب الحاصلين علي درجات من @Model.Min الي @Model.Max  درجة هم @ViewBag.NumberOfStudents طالب .</h3>
+	<a asp-action="InputMinMaxDegree" class="btn btn-primary mt-3 align-content-start justify-content-start">البحث في مدي اخر</a>
+</div>
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

@@ -1,0 +1,12 @@
+﻿@model StageNewSearch
+@{
+	ViewData["Title"] = "Result";
+}
+
+<partial name="_StudentTable" />
+
+<div class="text-center ">
+	<a class="btn btn-primary asp-controller="Students" asp-action="Index">نتيجة اخري</a>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}}

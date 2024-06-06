@@ -1,0 +1,29 @@
+﻿@{
+	ViewData["Title"] = "Home Page";
+}
+
+
+@model StageNewSearch
+@{
+    ViewData["Title"] = "Home";
+}
+<div class="text-center b mt-lg-5">
+    <form asp-action="Result" >
+        <h1 class="text-dark">الان ..نتيجة الثانوية العامة 2023</h1>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+        <input asp-for="SeatingNo"  class="form-control mt-2 w-25 d-inline text-center" placeholder="رقم الجلوس" />
+        <span  asp-validation-for="SeatingNo" class="text-danger d-block mt-2"></span>
+        </div>
+        <div></div>
+        <div class="form-group mt-4 ">
+            <input type="submit"    value="النتيجة" class="btn w-25 btn-primary" />
+        </div>
+    </form>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

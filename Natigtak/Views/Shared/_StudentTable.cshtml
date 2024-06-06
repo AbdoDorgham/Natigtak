@@ -1,0 +1,40 @@
+﻿@model StageNewSearch
+
+
+<div class="text-center">
+	<table class="table table-bordered bg-light table-striped ">
+		<tr>
+			<th>الاسم</th>
+			<td>@Model.ArabicName</td>
+
+		</tr>
+		<tr>
+			<th>الدرجة</th>
+			<td>@System.Math.Round((double)(Model.TotalDegree), 2) </td>
+
+		</tr>
+		<tr>
+			<th>النسبة المئوية</th>
+			<td>@System.Math.Round((double)(Model.TotalDegree / 410) * 100, 2) %</td>
+
+		</tr>
+		<tr>
+			<th>حالة الطالب</th>
+			<td>
+				@Model.StudentCaseDesc
+				@if (Model.StudentCase == 1 || Model.StudentCase is null)
+				{
+					<label>&#128516;</label>
+				}
+				else
+				{
+					<label>&#x1F614;</label>
+				}
+			</td>
+
+
+		</tr>
+
+
+	</table>
+</div>
